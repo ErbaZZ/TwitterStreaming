@@ -2,7 +2,6 @@
 from tweepy.streaming import StreamListener
 from tweepy import OAuthHandler
 from tweepy import Stream
-import json
 
 #Variables that contains the user credentials to access Twitter API 
 with open('SECRETS.txt') as s:
@@ -13,17 +12,18 @@ with open('SECRETS.txt') as s:
     consumer_secret = lines[3]
     s.close()
 
-filename = 'btc_log_raw.txt'
+#File to store the stream data
+filename = 'diabetes.txt'
 
-#This is a basic listener that just prints received tweets to stdout.
+#This is a basic listener that appends the stream data to a file
 class StdOutListener(StreamListener):    
     
     def on_data(self, data):
         try:
-            with open(filename,'a') as f:
-                f.write(data)
+            with open(filename,'ab') as f:
+                f.write(data.encode('utf8'))
                 f.close()
-            print(data)
+            print(data[15:45])
         except IOError as e:
             print(e)
         return True
@@ -32,11 +32,11 @@ class StdOutListener(StreamListener):
         print(status)
         
 if __name__ == '__main__':
-    #This handles Twitter authetification and the connection to Twitter Streaming API
+    #This handles Twitter authetication and the connection to Twitter Streaming API
     l = StdOutListener()
     auth = OAuthHandler(consumer_key, consumer_secret)
     auth.set_access_token(access_token, access_token_secret)
     stream = Stream(auth, l)
 
     #This line filter Twitter Streams to capture data by the keywords: 'python', 'javascript', 'ruby'
-    stream.filter(track=['Bitcoin, btc, cryptocurrency'])
+    stream.filter(track=['Diabetes', 'Cancer'])

@@ -1,0 +1,2 @@
+# Tweets Geolocation Approximation From Timezone Data
+This project uses python to retrieve Twitter tweets stream, and extract the timezone data to approximate their geolocation and map them on the world map in the form of heatmap.
