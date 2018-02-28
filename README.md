@@ -1,5 +1,5 @@
-# Tweets Geolocation Approximation From Timezone Data (Course Project for ITCS414 Information Storage and Retrieval)
-This project uses python to retrieve Twitter tweets stream, and extract the timezone data to approximate their geolocation and map them on the world map in the form of heatmap.
+# Twitter Trend Geolocation Visualization From Time Zone Data (Course Project for ITCS414 Information Storage and Retrieval)
+This project uses python to retrieve Twitter tweets stream, and extract the timezone data to approximate their geolocation and visualize them on the world map in the form of heatmap.
 
 # Introduction
 Twitter, one of the most popular social network platform, generates a massive amount of data everyday. Those data are from the users’ interactions in the form of “tweets” that the users publishes on Twitter. On average, more than 6,000 Tweets are “Tweeted” every second, resulting in over 500 million Tweets per day. The data from these Tweets can be collected and analyzed for deeper insights in various purposes such as finding trending topics, measuring the effectiveness of marketing campaigns, or determining customers’ satisfaction.
